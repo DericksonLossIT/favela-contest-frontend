@@ -279,7 +279,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
 const Gallery: React.FC = () => {
   return (
-    <div className="prose-lg prose flex min-w-full flex-col bg-stone-900 px-80 py-16">
+    <div className="prose-lg prose flex min-w-full flex-col bg-base-200 px-80 py-16">
       <h1 className="text-center">Galeria</h1>
       <div className="carousel rounded-box">
         <div id="slide1" className="carousel-item relative w-full">
@@ -333,7 +333,7 @@ const Gallery: React.FC = () => {
 
 const ContactForm: React.FC = () => {
   return (
-    <div className="prose-lg flex min-h-screen items-center justify-center bg-stone-900">
+    <div className="prose-lg flex min-h-screen items-center justify-center bg-base-200">
       <div className="mx-auto w-full max-w-lg">
         <h1 className="text-4xl font-medium">Quer falar com a gente?</h1>
         <p className="mt-3">
