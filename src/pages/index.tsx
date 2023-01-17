@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +15,12 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <Hero />
+      <Events />
       <Bio />
+      <SupportSection />
+      <OurTeam />
+      <Gallery />
+      <ContactForm />
       <Footer />
     </>
   );
@@ -80,107 +86,48 @@ const Footer: React.FC = () => {
 
 const Navbar: React.FC = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar sticky top-0 z-10 bg-base-100">
       <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn-ghost btn lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </label>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
-          >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <a className="justify-between">
-                Parent
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                </svg>
-              </a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
-        </div>
-        <a className="btn-ghost btn text-xl normal-case">daisyUI</a>
+        <a className="btn-ghost btn text-xl normal-case">
+          <Image
+            src="/logo.png"
+            alt="Logo Favela Contest"
+            width={64}
+            height={64}
+          />
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Item 1</a>
-          </li>
-          <li tabIndex={0}>
-            <a>
-              Parent
-              <svg
-                className="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-              </svg>
-            </a>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
+            <a>Eventos</a>
           </li>
           <li>
-            <a>Item 3</a>
+            <a>Quem somos</a>
+          </li>
+          <li>
+            <a>Galeria</a>
+          </li>
+          <li>
+            <a>Como apoiar</a>
+          </li>
+          <li>
+            <a>Contato</a>
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Get started</a>
-      </div>
+      <div className="navbar-end"></div>
     </div>
   );
 };
 
 const Hero: React.FC = () => {
   return (
-    <main>
-      <div className="hero min-h-screen bg-base-200">
+    <main className="bg-stone-900 px-12 pt-12 md:px-24">
+      <div className="hero min-h-screen bg-stone-900">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
-            src="https://placeimg.com/260/400/arch"
+            src="https://placeimg.com/260/260/arch"
             className="max-w-sm rounded-lg shadow-2xl"
           />
           <div>
@@ -203,9 +150,9 @@ const Hero: React.FC = () => {
 
 const Bio: React.FC = () => {
   return (
-    <section className="prose-l prose flex min-w-full flex-col bg-base-200 px-80">
+    <article className="prose-l prose flex min-w-full flex-col bg-stone-900 px-12 pt-12 md:px-24">
       <div className="">
-        <h1>Quem Somos?</h1>
+        <h1 className="text-left md:text-center">Quem Somos?</h1>
         <p>
           O Favela Contest é um projeto social realizado de maneira independente
           e que possui como objetivo impactar positivamente jovens em situação
@@ -231,6 +178,256 @@ const Bio: React.FC = () => {
           desafios com premiações, apresentações musicais de artistas locais e
           alimentação no local do evento.
         </p>
+      </div>
+    </article>
+  );
+};
+
+const OurTeam: React.FC = () => {
+  return (
+    <section className="prose-l prose flex min-w-full flex-col bg-stone-900 px-80">
+      <h1 className="self-center md:py-10">Nossa Equipe</h1>
+      <div className="grid grid-cols-3 self-center md:gap-64">
+        <Avatar name="Pablo Abreu" role="Idealizador / Produtor Executivo" />
+        <Avatar name="Derickson Loss" role="Idealizador / Produtor Executivo" />
+        <Avatar name="Inaê Mônaco" role="Produção Executiva / Gestão" />
+        <Avatar name="Nicolas Collar" role="Diretor de Arte / Filmmaker" />
+        <Avatar name="Gabriel Garcia" role="Diretor de Arte / Filmmaker" />
+        <Avatar
+          name="Giovana Rossato"
+          role="Diretora Criativa / Social Media"
+        />
+        <Avatar name="Matheus Brown" role="Fotógrafo" />
+        <Avatar name="Luis Felipe Tasca" role="Diretor de som" />
+        <Avatar name="Laura Padilha" role="Produção Geral" />
+      </div>
+    </section>
+  );
+};
+
+interface AvatarProps {
+  name: string;
+  role: string;
+}
+
+const Avatar: React.FC<AvatarProps> = ({ name, role }: AvatarProps) => {
+  return (
+    <div className="not-prose avatar flex flex-col items-center">
+      <div className="w-60 rounded-full">
+        <img src="https://placeimg.com/240/240/people" />
+      </div>
+      <h1 className="-mb-1 pt-10 text-3xl">{name}</h1>
+      <p className="pt-5 text-xs">
+        <b>{role}</b>
+      </p>
+    </div>
+  );
+};
+
+const Events: React.FC = () => {
+  return (
+    <section className="prose-l prose flex min-w-full   flex-col bg-stone-900 px-12 md:columns-3 md:px-24 lg:pt-12">
+      <h1 className="pb-6 text-left md:text-center">Eventos</h1>
+      <div className="md:flex-column sm:flex-column flex flex-col items-center  gap-6 md:flex-row">
+        <EventCard
+          name="Favela Contest 1"
+          description="O evento que iniciou tudo, realizado no início de 2022, na Vila
+          Brasília, em Porto Alegre"
+        />
+        <EventCard
+          name="Favela Contest 2"
+          description="Segundo evento realizado no fim de 2022, na pista da Apampa, no Bairro Restinga, extrema zona sul de Porto Alegre"
+        />
+        <EventCard
+          name="Favela Contest 3"
+          description="O evento que iniciou tudo, realizado no início de 2022, na Vila
+          Brasília, em Porto Alegre"
+        />
+      </div>
+    </section>
+  );
+};
+
+interface EventCardProps {
+  name: string;
+  description: string;
+}
+
+const EventCard: React.FC<EventCardProps> = ({
+  name,
+  description,
+}: EventCardProps) => {
+  return (
+    <div className="card w-96 bg-base-100 shadow-xl">
+      <figure className="mb-0.5 px-10 pt-10">
+        <img
+          src="https://placeimg.com/400/225/arch"
+          alt="Shoes"
+          className="rounded-xl"
+        />
+      </figure>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title">{name}</h2>
+        <p>{description}</p>
+        <div className="card-actions">
+          <button className="btn-primary btn">Conferir</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Gallery: React.FC = () => {
+  return (
+    <div className="prose-lg prose flex min-w-full flex-col bg-stone-900 px-80 py-16">
+      <h1 className="text-center">Galeria</h1>
+      <div className="carousel rounded-box">
+        <div id="slide1" className="carousel-item relative w-full">
+          <img src="https://placeimg.com/800/800/arch" className="w-full" />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide4" className="btn-circle btn">
+              ❮
+            </a>
+            <a href="#slide2" className="btn-circle btn">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide2" className="carousel-item relative w-full">
+          <img src="https://placeimg.com/800/200/arch" className="w-full" />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide1" className="btn-circle btn">
+              ❮
+            </a>
+            <a href="#slide3" className="btn-circle btn">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide3" className="carousel-item relative w-full">
+          <img src="https://placeimg.com/800/200/arch" className="w-full" />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide2" className="btn-circle btn">
+              ❮
+            </a>
+            <a href="#slide4" className="btn-circle btn">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide4" className="carousel-item relative w-full">
+          <img src="https://placeimg.com/800/200/arch" className="w-full" />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide3" className="btn-circle btn">
+              ❮
+            </a>
+            <a href="#slide1" className="btn-circle btn">
+              ❯
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ContactForm: React.FC = () => {
+  return (
+    <div className="prose-lg flex min-h-screen items-center justify-center bg-stone-900">
+      <div className="mx-auto w-full max-w-lg">
+        <h1 className="text-4xl font-medium">Quer falar com a gente?</h1>
+        <p className="mt-3">
+          Envie um e-mail para{" "}
+          <a href="mailto:favelacontest@gmail.com">favelacontest@gmail.com</a>{" "}
+          ou através do formulário abaixo:
+        </p>
+
+        <form action="https://api.web3forms.com/submit" className="mt-10">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="relative z-0">
+              <input
+                type="text"
+                name="name"
+                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm  focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder=" "
+              />
+              <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                Seu nome
+              </label>
+            </div>
+            <div className="relative z-0">
+              <input
+                type="text"
+                name="email"
+                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm  focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder=" "
+              />
+              <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                Seu e-mail
+              </label>
+            </div>
+            <div className="relative z-0 col-span-2">
+              <textarea
+                name="message"
+                rows={5}
+                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm  focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder=" "
+              ></textarea>
+              <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                Sua mensagem
+              </label>
+            </div>
+          </div>
+          <button
+            type="submit"
+            className="btn-primary btn  mt-5 rounded-md px-10 py-2"
+          >
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+interface SupportCardProps {
+  name: string;
+  picture: string;
+}
+
+const SupportCard: React.FC<SupportCardProps> = ({
+  name,
+  picture,
+}: SupportCardProps) => {
+  return (
+    <div className="card w-64 bg-base-100 shadow-xl">
+      <figure className="px-6">
+        <img src={picture} alt="Shoes" className="rounded-xl" />
+      </figure>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title mt-[-2rem]">{name}</h2>
+        <div className="card-actions">
+          <button className="btn-primary btn">Apoiar</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const SupportSection: React.FC = () => {
+  return (
+    <section className="prose flex min-w-full flex-col bg-stone-900 py-12 px-80">
+      <h1>Apoie o Favela Contest</h1>
+      <div className="flex columns-2 gap-6 ">
+        <SupportCard
+          name="PicPay"
+          picture="https://placeimg.com/400/225/arch"
+        />
+        <SupportCard
+          name="Vakinha"
+          picture="https://placeimg.com/400/225/arch"
+        />
       </div>
     </section>
   );
