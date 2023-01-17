@@ -123,8 +123,8 @@ const Navbar: React.FC = () => {
 
 const Hero: React.FC = () => {
   return (
-    <main className="bg-stone-900 px-12 pt-12 md:px-24">
-      <div className="hero min-h-screen bg-stone-900">
+    <main className="bg-base-200 px-12 pt-12 md:px-24">
+      <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://placeimg.com/260/260/arch"
@@ -150,7 +150,7 @@ const Hero: React.FC = () => {
 
 const Bio: React.FC = () => {
   return (
-    <article className="prose-l prose flex min-w-full flex-col bg-stone-900 px-12 pt-12 md:px-24">
+    <article className="prose-l prose flex min-w-full flex-col bg-base-200 px-12 pt-12 md:px-24">
       <div className="">
         <h1 className="text-left md:text-center">Quem Somos?</h1>
         <p>
@@ -185,7 +185,7 @@ const Bio: React.FC = () => {
 
 const OurTeam: React.FC = () => {
   return (
-    <section className="prose-l prose flex min-w-full flex-col bg-stone-900 px-80">
+    <section className="prose-l prose flex min-w-full flex-col bg-base-200 px-80">
       <h1 className="self-center md:py-10">Nossa Equipe</h1>
       <div className="grid grid-cols-3 self-center md:gap-64">
         <Avatar name="Pablo Abreu" role="Idealizador / Produtor Executivo" />
@@ -226,7 +226,7 @@ const Avatar: React.FC<AvatarProps> = ({ name, role }: AvatarProps) => {
 
 const Events: React.FC = () => {
   return (
-    <section className="prose-l prose flex min-w-full   flex-col bg-stone-900 px-12 md:columns-3 md:px-24 lg:pt-12">
+    <section className="prose-l prose flex min-w-full   flex-col bg-base-200 px-12 md:columns-3 md:px-24 lg:pt-12">
       <h1 className="pb-6 text-left md:text-center">Eventos</h1>
       <div className="md:flex-column sm:flex-column flex flex-col items-center  gap-6 md:flex-row">
         <EventCard
@@ -417,7 +417,7 @@ const SupportCard: React.FC<SupportCardProps> = ({
 
 const SupportSection: React.FC = () => {
   return (
-    <section className="prose flex min-w-full flex-col bg-stone-900 py-12 px-80">
+    <section className="prose flex min-w-full flex-col bg-base-200 py-12 px-80">
       <h1>Apoie o Favela Contest</h1>
       <div className="flex columns-2 gap-6 ">
         <SupportCard
